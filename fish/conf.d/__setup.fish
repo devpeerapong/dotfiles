@@ -6,14 +6,14 @@ if [ (uname -m) = x86_64 ]
 end
 
 set -l list \
-    'fisher		curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher && fisher update' \
     'fd			brew install fd' \
     'bat		brew install bat' \
     'fzf		brew install fzf' \
     'zoxide		brew install zoxide' \
     'lazygit	brew install lazygit' \
     'fnm		/bin/bash -c "$(curl -fsSL https://fnm.vercel.app/install)"' \
-    'starship	/bin/bash -c "$(curl -fsSL https://starship.rs/install.sh)"'
+    'starship	/bin/bash -c "$(curl -fsSL https://starship.rs/install.sh)"' \
+    'fisher		curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher && fisher update'
 
 for item in $list
     set -l line (string split -m 1 \t $item)
