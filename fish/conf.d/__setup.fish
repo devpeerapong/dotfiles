@@ -7,6 +7,7 @@ end
 
 set -l list \
     'fd			brew install fd' \
+    'rg			brew install ripgrep' \
     'bat		brew install bat' \
     'fzf		brew install fzf' \
     'zoxide		brew install zoxide' \
