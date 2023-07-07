@@ -61,6 +61,7 @@ require("lazy").setup({
 					"jose-elias-alvarez/null-ls.nvim",
 				},
 			},
+			{ "b0o/schemastore.nvim" },
 		},
 	},
     "nvim-tree/nvim-web-devicons",

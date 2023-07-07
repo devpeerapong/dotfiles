@@ -22,6 +22,26 @@ lsp.on_attach(function(client, bufnr)
 	end)
 end)
 
+require("lspconfig").jsonls.setup({
+	settings = {
+		json = {
+			schemas = require("schemastore").json.schemas(),
+			validate = { enable = true },
+		},
+	},
+})
+
+require("lspconfig").yamlls.setup({
+	settings = {
+		yaml = {
+			schemaStore = {
+				enable = false,
+			},
+			schemas = require("schemastore").yaml.schemas(),
+		},
+	},
+})
+
 lsp.setup()
 
 require("null-ls").setup({})
