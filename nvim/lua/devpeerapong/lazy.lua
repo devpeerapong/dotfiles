@@ -31,6 +31,7 @@ require("lazy").setup({
         end,
     },
 	{ "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
+	{ "nvim-treesitter/nvim-treesitter", branch = "master", build = ":TSUpdate" },
 	"theprimeagen/harpoon",
 	"mbbill/undotree",
 	"lukas-reineke/indent-blankline.nvim",
