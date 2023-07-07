@@ -21,16 +21,9 @@ require("lazy").setup({
 		"catppuccin/nvim",
 		name = "catppuccin",
 		init = function()
-            -- vim.cmd.colorscheme("catppuccin-mocha")
+			vim.cmd.colorscheme("catppuccin-mocha")
 		end,
 	},
-    {
-        "folke/tokyonight.nvim",
-        init = function()
-			vim.cmd.colorscheme("tokyonight-night")
-        end,
-    },
-	{ "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
 	{ "nvim-treesitter/nvim-treesitter", branch = "master", build = ":TSUpdate" },
 	"theprimeagen/harpoon",
 	"mbbill/undotree",
@@ -65,24 +58,13 @@ require("lazy").setup({
 			{ "b0o/schemastore.nvim" },
 		},
 	},
-    "nvim-tree/nvim-web-devicons",
-	{
-		"nvim-lualine/lualine.nvim",
-		dependencies = {
-			"nvim-tree/nvim-web-devicons",
-		},
-	},
+	"nvim-tree/nvim-web-devicons",
+	"nvim-lualine/lualine.nvim",
 	{
 		"glepnir/lspsaga.nvim",
 		event = "LspAttach",
 		config = function()
 			require("lspsaga").setup({})
 		end,
-		dependencies = {
-			{ "nvim-tree/nvim-web-devicons" },
-			{ "nvim-treesitter/nvim-treesitter" },
-		},
 	},
-    "fladson/vim-kitty"
 })
-
