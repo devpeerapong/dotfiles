@@ -1,0 +1,62 @@
+{
+	"title": "CTRL media control",
+	"rules": [
+		{
+			"description": "CTRL + q to decrease volume",
+			"manipulators": [
+				{
+					"from": {
+						"key_code": "q",
+						"modifiers": {
+							"mandatory": ["left_control"]
+						}
+					},
+					"to": [
+						{
+							"consumer_key_code": "volume_decrement"
+						}
+					],
+					"type": "basic"
+				}
+			]
+		},
+		{
+			"description": "CTRL + w to increase volume",
+			"manipulators": [
+				{
+					"from": {
+						"key_code": "w",
+						"modifiers": {
+							"mandatory": ["left_control"]
+						}
+					},
+					"to": [
+						{
+							"consumer_key_code": "volume_increment"
+						}
+					],
+					"type": "basic"
+				}
+			]
+		},
+		{
+			"description": "CTRL + e to mute",
+			"manipulators": [
+				{
+					"from": {
+						"key_code": "e",
+						"modifiers": {
+							"mandatory": ["left_control"]
+						}
+					},
+					"to": [
+						{
+							"consumer_key_code": "mute"
+						}
+					],
+					"type": "basic"
+				}
+			]
+		}
+	]
+}
