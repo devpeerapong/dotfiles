@@ -13,6 +13,7 @@ set -l list \
     'zoxide		brew install zoxide' \
     'lazygit	brew install lazygit' \
     'delta  	brew install git-delta' \
+    'goku  	    brew install yqrashawn/goku/goku' \
     'fnm		/bin/bash -c "$(curl -fsSL https://fnm.vercel.app/install)"' \
     'starship	/bin/bash -c "$(curl -fsSL https://starship.rs/install.sh)"' \
     'fisher		curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher && fisher update'
