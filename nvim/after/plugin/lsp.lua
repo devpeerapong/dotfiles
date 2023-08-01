@@ -15,7 +15,7 @@ lsp.ensure_installed({
 lsp.on_attach(function(client, bufnr)
 	lsp.default_keymaps({
 		buffer = bufnr,
-		omit = { "K" },
+		omit = { "K", "gr" },
 	})
 	vim.keymap.set({ "n", "x" }, "gq", function()
 		vim.lsp.buf.format({ async = false, timeout_ms = 10000 })
@@ -64,4 +64,4 @@ local keymap = vim.keymap.set
 keymap({ "n", "v" }, "<leader>ca", "<cmd>Lspsaga code_action<CR>")
 keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>")
 keymap("n", "gp", "<cmd>Lspsaga peek_definition<CR>")
-keymap("n", "gh", "<cmd>Lspsaga lsp_finder<CR>")
+keymap("n", "gr", "<cmd>Lspsaga lsp_finder<CR>")
