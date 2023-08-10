@@ -1,6 +1,6 @@
 {:layers {:vim-mode {:key :spacebar}}
  :main [{:des "Caps Lock to Escape"
-         :rules [[:##caps_lock nil nil {:alone :escape}]]}
+         :rules [[:##caps_lock :left_control nil {:alone :escape}]]}
         {:des "Vim mode"
          :rules [:vim-mode
                  [:##h :left_arrow]
