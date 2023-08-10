@@ -1,13 +1,11 @@
-{:layers {:vim-mode {:key :spacebar}}
- :main [{:des "Caps Lock to Escape"
+{:main [{:des "Caps Lock to Escape"
          :rules [[:##caps_lock :left_control nil {:alone :escape}]]}
         {:des "Vim mode"
-         :rules [:vim-mode
-                 [:##h :left_arrow]
-                 [:##j :down_arrow]
-                 [:##k :up_arrow]
-                 [:##l :right_arrow]
-                 [:##q :volume_decrement]
-                 [:##w :volume_increment]
-                 [:##e :mute]]}]}
+         :rules [[:!Th :left_arrow]
+                 [:!Tj :down_arrow]
+                 [:!Tk :up_arrow]
+                 [:!Tl :right_arrow]
+                 [:!Tq :volume_decrement]
+                 [:!Tw :volume_increment]
+                 [:!Te :mute]]}]}
 
