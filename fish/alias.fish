@@ -1,5 +1,5 @@
-alias ls exa
-alias la "exa --all --group --header --group-directories-first --long"
+alias ls eza
+alias la "eza --all --group --header --group-directories-first --long"
 
 alias cat bat
 
