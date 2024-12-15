@@ -12,7 +12,7 @@ if [ (uname -m) = x86_64 ]
     end
 end
 
-set -l brewcli fd eza bat fzf zoxide lazygit
+set -l brewcli fd eza bat fzf zoxide lazygit nvim
 for item in $brewcli
     if not type -q $item
         echo Installing $item
