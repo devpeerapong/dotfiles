@@ -1,0 +1,20 @@
+# btop is installed via Homebrew in setup.sh — no backend here ships macOS binaries
+[tools]
+node = "latest"
+pnpm = "latest"
+starship = "latest"
+eza = "latest"
+bat = "latest"
+fd = "latest"
+ripgrep = "latest"
+fzf = "latest"
+zoxide = "latest"
+neovim = "latest"
+delta = "latest"
+sd = "latest"
+xh = "latest"
+yazi = "latest"
+"github:ogulcancelik/herdr" = "latest"
+
+[settings]
+experimental = true

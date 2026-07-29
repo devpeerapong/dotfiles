@@ -1,20 +1,25 @@
-node_modules
-.next
-build
-dist
+# Global fd ignore rules (~/.config/fd/ignore)
 
-Applications
-Downloads
-Library
-Desktop
-Movies
-Pictures
-Public
-Documents
-Music
+# Top 5 Dependency & Build Artifact Fallbacks
+node_modules/
+dist/
+build/
+target/
+.venv/
 
-Postman
-Parallels
-Creative Cloud Files
-iCloud Drive (Archive)
-iCloud Drive (Archive) - 1
+# Heavy System Directories (Prevents freezing when searching from $HOME)
+Applications/
+Downloads/
+Library/
+Desktop/
+Movies/
+Pictures/
+Public/
+Documents/
+Music/
+
+# Cloud Storage & Virtual Machine Archives
+Postman/
+Parallels/
+Creative Cloud Files/
+iCloud Drive (Archive)*/

@@ -1,6 +1,12 @@
 if status is-interactive
-    source $__fish_config_dir/alias.fish
-    source $__fish_config_dir/set.fish
+    # FZF keybindings & completion
+    if type -q fzf
+        fzf --fish | source
+    end
 
-    starship init fish | source
+    # Starship prompt
+    if type -q starship
+        starship init fish | source
+    end
 end
+

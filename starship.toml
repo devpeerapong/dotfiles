@@ -1,0 +1,35 @@
+# Starship Config - 2-Line Minimalist with Vibrant Colored Git Status Numbers
+add_newline = false
+
+format = """
+$directory$git_branch$git_status$cmd_duration
+$character"""
+
+[directory]
+style = "cyan bold"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[git_branch]
+symbol = " "
+style = "purple bold"
+
+[git_status]
+format = '$all_status$ahead_behind'
+ahead = "[↑${count}](cyan bold) "
+behind = "[↓${count}](purple bold) "
+diverged = "[↑${ahead_count} ↓${behind_count}](purple bold) "
+staged = "[+${count}](green bold) "
+modified = "[~${count}](yellow bold) "
+untracked = "[?${count}](red bold) "
+deleted = "[-${count}](bright-red bold) "
+conflicted = "[✖${count}](bold red) "
+
+[cmd_duration]
+min_time = 2_000
+style = "bright-black"
+format = "[$duration]($style) "
+
+[character]
+success_symbol = "[❯](bold green) "
+error_symbol = "[❯](bold red) "
