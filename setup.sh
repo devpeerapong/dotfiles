@@ -77,6 +77,7 @@ link_config "$DOTFILES_DIR/fish" "$HOME/.config/fish"
 link_config "$DOTFILES_DIR/mise" "$HOME/.config/mise"
 link_config "$DOTFILES_DIR/fd" "$HOME/.config/fd"
 link_config "$DOTFILES_DIR/ghostty" "$HOME/.config/ghostty"
+link_config "$DOTFILES_DIR/herdr" "$HOME/.config/herdr"
 link_config "$DOTFILES_DIR/starship.toml" "$HOME/.config/starship.toml"
 link_config "$DOTFILES_DIR/git/config" "$HOME/.config/git/config"
 
