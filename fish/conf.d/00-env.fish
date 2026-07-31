@@ -5,6 +5,10 @@ set -g fish_greeting
 set -gx EDITOR nvim
 set -gx VISUAL nvim
 
+# Let mise own the pnpm version. A repo's packageManager pin would otherwise make
+# pnpm self-download a redundant copy into its store and re-exec into it.
+set -gx pnpm_config_pm_on_fail ignore
+
 # Mise shims path (makes mise-managed binaries available immediately)
 if test -d ~/.local/share/mise/shims
     fish_add_path -g ~/.local/share/mise/shims
