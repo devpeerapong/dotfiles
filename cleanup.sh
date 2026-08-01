@@ -71,7 +71,7 @@ fi
 info "Provisioning modern declarative tools via mise..."
 export PATH="$HOME/.local/share/mise/shims:$HOME/.local/bin:$PATH"
 if command -v mise &>/dev/null; then
-    mise install
+    mise install -y
     success "Mise tools provisioned successfully!"
 fi
 

@@ -43,8 +43,8 @@ if [ "$OS" = "Darwin" ]; then
         defaults write com.apple.finder ShowPathbar -bool true 2>/dev/null || true
     fi
 
-    info "Installing FiraCode Nerd Font..."
-    brew install --cask font-fira-code-nerd-font 2>/dev/null || true
+    info "Installing macOS Homebrew casks (FiraCode Nerd Font, Ghostty)..."
+    brew install --cask font-fira-code-nerd-font ghostty 2>/dev/null || true
 
 elif [ "$OS" = "Linux" ]; then
     info "Linux/WSL detected."
@@ -85,7 +85,7 @@ link_config "$DOTFILES_DIR/git/config" "$HOME/.config/git/config"
 info "Provisioning CLI tools & runtimes declared in mise/config.toml..."
 export PATH="$HOME/.local/share/mise/shims:$HOME/.local/bin:$PATH"
 if command -v mise &>/dev/null; then
-    mise install
+    mise install -y
     success "Mise tools provisioned successfully!"
 else
     warn "Mise binary not found in PATH yet. Run 'mise install' manually after shell restart."

@@ -16,6 +16,11 @@ error()   { echo -e "${RED}${BOLD}[ERROR]${RESET} $1"; }
 DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 OS="$(uname -s)"
 
+# Non-interactive environment setup
+# NONINTERACTIVE=1 is strictly required by Homebrew's install.sh script to prevent pausing for Enter keypresses
+export NONINTERACTIVE=1
+export HOMEBREW_NO_AUTO_UPDATE=1
+
 # Safe symlink helper with target verification
 link_config() {
     local src="$1"
