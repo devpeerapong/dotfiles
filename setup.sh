@@ -43,8 +43,8 @@ if [ "$OS" = "Darwin" ]; then
         defaults write com.apple.finder ShowPathbar -bool true 2>/dev/null || true
     fi
 
-    info "Installing macOS Homebrew casks (FiraCode Nerd Font, Ghostty)..."
-    brew install --cask font-fira-code-nerd-font ghostty 2>/dev/null || true
+    info "Installing macOS Homebrew casks (FiraCode Nerd Font, Ghostty, Raycast, Stats, Ice, Amethyst)..."
+    brew install --cask font-fira-code-nerd-font ghostty raycast stats jordanbaird-ice amethyst 2>/dev/null || true
 
 elif [ "$OS" = "Linux" ]; then
     info "Linux/WSL detected."
@@ -58,11 +58,20 @@ elif [ "$OS" = "Linux" ]; then
     fi
 fi
 
-# 2. Core Dependencies (Fish & Mise)
-info "Installing core shell & package manager (fish, mise)..."
+# 2. Core Dependencies (Fish, Mise, Btop, Colima, Docker stack)
+info "Installing core shell, package manager & container runtime (fish, mise, btop, colima, docker)..."
 if command -v brew &>/dev/null; then
-    # btop is installed here (not via mise) since it ships no macOS release binaries
-    brew install fish mise btop
+    brew install fish mise btop colima docker docker-compose docker-buildx
+    
+    # Link Docker CLI plugins (~/.docker/cli-plugins for compose & buildx)
+    BREW_PREFIX="$(brew --prefix)"
+    mkdir -p "$HOME/.docker/cli-plugins"
+    if [ -f "$BREW_PREFIX/opt/docker-compose/bin/docker-compose" ]; then
+        ln -sfn "$BREW_PREFIX/opt/docker-compose/bin/docker-compose" "$HOME/.docker/cli-plugins/docker-compose"
+    fi
+    if [ -f "$BREW_PREFIX/opt/docker-buildx/bin/docker-buildx" ]; then
+        ln -sfn "$BREW_PREFIX/opt/docker-buildx/bin/docker-buildx" "$HOME/.docker/cli-plugins/docker-buildx"
+    fi
 else
     warn "Homebrew not active; ensuring mise is available via curl fallback..."
     if ! command -v mise &>/dev/null; then
@@ -80,6 +89,7 @@ link_config "$DOTFILES_DIR/ghostty" "$HOME/.config/ghostty"
 link_config "$DOTFILES_DIR/herdr" "$HOME/.config/herdr"
 link_config "$DOTFILES_DIR/starship.toml" "$HOME/.config/starship.toml"
 link_config "$DOTFILES_DIR/git/config" "$HOME/.config/git/config"
+link_config "$DOTFILES_DIR/nvim" "$HOME/.config/nvim"
 
 # 4. Provision All CLI Tools & Runtimes via Mise
 info "Provisioning CLI tools & runtimes declared in mise/config.toml..."

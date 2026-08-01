@@ -10,12 +10,13 @@ git clone https://github.com/devpeerapong/dotfiles.git ~/.dotfiles && cd ~/.dotf
 
 ## Structure
 
-- `setup.sh` — Bootstrap installer (Homebrew, Ghostty, Fish, mise, symlinks)
+- `setup.sh` — Bootstrap installer (Homebrew, Ghostty, Raycast, Stats, Ice, Amethyst, Colima, Docker CLI, Fish, mise, symlinks)
 - `cleanup.sh` — Remove legacy configs and re-provision
 - `git/config` — Git config with delta diffs (includes `~/.config/git/config.local`)
-- `mise/config.toml` — Declarative tool versions (node, pnpm, eza, bat, fzf, etc.)
+- `mise/config.toml` — Declarative tool versions (node, pnpm, eza, bat, fzf, lazygit, lazydocker, etc.)
 - `fd/ignore` — Global fd search exclusions
 - `ghostty/config` — Ghostty terminal config (font, etc.)
+- `nvim/` — Neovim configuration (LazyVim setup)
 - `starship.toml` — Prompt theme
 - `fish/` — Fish shell config
   - `conf.d/00-env.fish` — PATH setup
